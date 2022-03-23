@@ -7,4 +7,6 @@ router.get("/", (req, res, next) => {
   res.render("index", { user: req.session.currentUser });
 });
 
+
+
 module.exports = router;

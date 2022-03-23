@@ -1,6 +1,12 @@
 <h1>
     Welcome {{ user.username}}
 </h1>
+{{#each allMoviesList}}
+   <h3>{{this.Title}}</h3> 
+    <img src="{{this.Images.[1]}}" alt="">
+
+
+{{/each}}
 <form action="/logout" method="post">
 <button type="submit">Logout</button>
 </form>
