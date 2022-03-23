@@ -8,7 +8,7 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", async (req, res) => {
-  console.log(req.body);
+  
   try {
     const userExists = await User.exists({
       email: req.body.email,
@@ -38,12 +38,12 @@ router.get("/login", (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    console.log(req.body);
+    
     const user = await User.findOne({ email: req.body.email });
-    console.log(user);
+    
     const hashFromDb = user.password;
     const passwordCorrect = await bcrypt.compare(req.body.password, hashFromDb);
-    console.log(passwordCorrect ? "Yes" : "No");
+    
     if (!passwordCorrect) {
       throw Error("Password incorrect");
     }

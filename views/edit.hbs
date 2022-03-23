@@ -1,29 +1,29 @@
 <h2>Update the movies</h2>
-<hr>
+<hr />
 
 <div>
-  <form method='POST' action='/profile/edit/{{movie._id}}'>
+  <form method="POST" action="/profile/edit/{{movieToEdit._id}}">
 
     <div>
       <label>Title: </label>
-      <input name='Title' type='text' value='{{movie.Title}}'>
+      <input name="Title" type="text" value="{{movieToEdit.Title}}" />
     </div>
 
     <div>
       <label>Actors: </label>
-      <input name='Actors' type='text' value='{{movie.Actors}}'>
+      <input name="Actors" type="text" value="{{movieToEdit.Actors}}" />
     </div>
 
     <div>
       <label>Image</label>
-      <input name='Image' type='image' value='{{movie.Image}}'>
+      <input name="Image" type="text" value="{{movieToEdit.Image}}" />
     </div>
 
-    <button type='submit'>Submit</button>
+    <button type="submit">edit</button>
 
-    <form method='POST' action='/drones/delete/{{this._id}}'>
-      <button type='submit'>Delete</button>
-    </form>
+  </form>
 
+  <form method="POST" action="/profile/delete/{{movieToEdit._id}}">
+    <button type="submit">Delete</button>
   </form>
 </div>

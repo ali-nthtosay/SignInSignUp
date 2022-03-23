@@ -3,7 +3,8 @@
 </h1>
 {{#each allMoviesList}}
    <h3>{{this.Title}}</h3> 
-    <img src="{{this.Images.[1]}}" alt="">
+    <img src="{{this.Image}}" alt="">
+    <a href="/profile/edit/{{this._id}}">Edit</a>
 {{/each}}
 <form action="/logout" method="post">
 <button type="submit">Logout</button>
