@@ -51,18 +51,17 @@
       <input name="Image" type="text" value="{{movieToEdit.Image}}" />
     </div>
 
-    <button type="submit" class="edit-label">edit</button>
+    <button type="submit" class="edit-label style-btn" id="style-btn-edit">Edit</button>
 
     {{!-- <button class="nbt" type="submit" ><a class="edit-btn-page"><span>Edit</span></a></button> --}}
 
   </form>
 
   <form method="POST" action="/profile/delete/{{movieToEdit._id}}">
-    <button type="submit" class="edit-label">Delete</button>
+    <button type="submit" class="edit-label style-btn" id="style-btn-delete">Delete</button>
 
 
   </form>
-
 
 </div>
 

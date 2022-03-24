@@ -401,7 +401,7 @@ form{
   
 }
 .edit-body{
-  color: white;
+  color: rgb(235, 110, 110);
   margin: 100px;
   height: 40vh;
   width: 100wh;
@@ -415,10 +415,84 @@ form{
   margin: 20px 0;
 }
 .edit-label label{
-  margin: 10px 0;
+  display: block;
+
+  margin: 10px auto;
 }
 .edit-label input{
   padding: 3px 35px;
 }
 
 /* styling button in editing page */
+
+
+/* --------------------------------styling buttons in create page  */
+.style-btn {
+  width: 180px;
+  position: relative;
+  padding: 10px 50px;
+  margin: 0 15px;
+  color: #30df20;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 20px;
+  transition: 0.5s;
+  overflow: hidden;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0007);
+}
+.style-btn:nth-child(1){
+  filter: hue-rotate(115deg);
+}
+.style-btn:nth-child(2){
+  filter: hue-rotate(270deg);
+}
+.style-btn:hover{
+  background-color: #21ebff;
+  color: rgb(230, 21, 21);
+  box-shadow: 0 0 50px #21ebff;
+  transition-delay: 0.1s;
+}
+.style-btn:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #62c213;
+  border-left: 2px solid #21ebff;
+  transition: 0.3s;
+  
+}
+.style-btn:hover:before{
+  width: 100%;
+  height: 100%;
+}
+
+.style-btn:after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #21ebff;
+  border-right: 2px solid #538be0;
+  transition: 0.2s;
+}
+.style-btn:hover:after{
+  width: 100%;
+  height: 100%;
+}
+
+ #style-btn-delete{
+margin-top: 60px;
+ }
+#style-btn-edit{
+  margin-top: 50px;
+}
+
+#create-btn-create{
+  margin-top: 50px;
+}
