@@ -1,29 +1,36 @@
-<h2>Update the movies</h2>
-<hr />
+<div id="edit-h">
+  <h2 >Update the movies</h2>
+</div>
 
-<div>
+
+<div id="edit-body">
+
+
+
   <form method="POST" action="/profile/edit/{{movieToEdit._id}}">
 
-    <div>
-      <label>Title: </label>
+    <div class="edit-label">
+      <label>Title: </label> 
       <input name="Title" type="text" value="{{movieToEdit.Title}}" />
     </div>
 
-    <div>
-      <label>Actors: </label>
+    <div class="edit-label">
+      <label>Actors: </label> 
       <input name="Actors" type="text" value="{{movieToEdit.Actors}}" />
     </div>
 
-    <div>
-      <label>Image</label>
+    <div class="edit-label">
+      <label>Image</label> 
       <input name="Image" type="text" value="{{movieToEdit.Image}}" />
     </div>
 
-    <button type="submit">edit</button>
+    <button type="submit" class="edit-label">edit</button>
 
   </form>
 
   <form method="POST" action="/profile/delete/{{movieToEdit._id}}">
-    <button type="submit">Delete</button>
+    <button type="submit" class="edit-label">Delete</button>
   </form>
+
+
 </div>

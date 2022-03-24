@@ -280,3 +280,38 @@ form{
   flex-direction: column;
   margin: 40px;
 }
+.before-each img{
+  border-radius: 50%;
+}
+.before-each h6{
+  width: 400px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+/* edit page */
+#edit-h{
+  text-align: center;
+  margin: 35px 0;
+  
+}
+#edit-body{
+  margin: 100px;
+  background: #00b7ff;
+  height: 40vh;
+  width: 100wh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.edit-label{
+  margin: 20px 0;
+}
+.edit-label label{
+  margin: 10px 0;
+}
+.edit-label input{
+  padding: 3px 35px;
+}
