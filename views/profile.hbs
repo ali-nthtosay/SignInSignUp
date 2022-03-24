@@ -1,11 +1,19 @@
-<h1>
-    Welcome {{ user.username}}
-</h1>
-{{#each allMoviesList}}
-   <h3>{{this.Title}}</h3> 
-    <img src="{{this.Image}}" alt="">
-    <a href="/profile/edit/{{this._id}}">Edit</a>
-{{/each}}
-<form action="/logout" method="post">
-<button type="submit">Logout</button>
-</form>
+<div id="profile-page">
+     <h1>
+      Welcome
+      {{user.username}}          
+    </h1>
+  <div id="profile-body">  
+    {{#each allMoviesList}}
+        <div class="before-each">
+            <h3>{{this.Title}}</h3>
+            <img src="{{this.Image}}" alt="" class="img-size" />
+            <button><a href="/profile/edit/{{this._id}}">Edit</a></button> 
+        </div>
+    {{/each}}
+  
+    {{!-- <form action="/logout" method="post">
+      <button type="submit">Logout</button>
+    </form> --}}
+  </div>
+</div>

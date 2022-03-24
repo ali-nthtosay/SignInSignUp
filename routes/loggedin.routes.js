@@ -9,8 +9,8 @@ router.use(requireLogin);
 //get all movies information from public js allMovies
 router.get('/profile',async (req,res) =>{
  let allMoviesList = await addMovie.find({});
-
-  res.render("profile", {allMoviesList});
+ let user = req.session.currentUser 
+  res.render("profile", {allMoviesList, user});
 });
 
 //add save new movie

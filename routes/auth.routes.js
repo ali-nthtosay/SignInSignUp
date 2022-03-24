@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const { requireToBeLoggedOut } = require("../middlewares/route-guard");
 
 router.get("/signup", (req, res) => {
-  res.render("signup");
+  res.render("loginSignup");
 });
 
 router.post("/signup", async (req, res) => {
@@ -14,7 +14,7 @@ router.post("/signup", async (req, res) => {
       email: req.body.email,
     });
     if (userExists) {
-      res.render("signup", { error: "Hey username already exists" });
+      res.render("loginSignup", { error: "Hey username already exists" });
       return;
     }
     const salt = await bcrypt.genSalt(10);
@@ -27,13 +27,13 @@ router.post("/signup", async (req, res) => {
     await newUser.save();
     res.redirect("/login");
   } catch (err) {
-    res.render("signup", { error: "Some kind of error happened" });
+    res.render("loginSignup", { error: "Some kind of error happened" });
   }
 });
 
 router.use("/login", requireToBeLoggedOut);
 router.get("/login", (req, res) => {
-  res.render("login");
+  res.render("loginSignup");
 });
 
 router.post("/login", async (req, res) => {
@@ -50,11 +50,11 @@ router.post("/login", async (req, res) => {
     req.session.currentUser = user;
     res.redirect("/profile");
   } catch (err) {
-    res.render("login", { error: "Wrong username or password" });
+    res.render("loginSignup", { error: "Wrong username or password" });
   }
 });
 
-router.post("/logout", (req, res) => {
+router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
     if (err) return next(err);
 
