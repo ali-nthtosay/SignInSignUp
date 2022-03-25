@@ -35,6 +35,10 @@ app.use(require("./routes/auth.routes"));
 const loggedinRoutesRouter = require("./routes/loggedin.routes");
 app.use(loggedinRoutesRouter);
 
+
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 

@@ -16,6 +16,8 @@ const favicon = require("serve-favicon");
 // ℹ️ global package used to `normalize` paths amongst different operating systems
 // https://www.npmjs.com/package/path
 const path = require("path");
+const MongoStore = require('connect-mongo')
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/MyDB";
 
 // Middleware configuration
 module.exports = (app) => {
@@ -37,8 +39,13 @@ module.exports = (app) => {
         httpOnly: true,
         maxAge: 600000, // 60 * 1000 ms * 10 === 10 min
       },
+      store: MongoStore.create({
+        mongoUrl: MONGO_URI
+      })
     })
   );
+
+  
   // In development environment the app logs
   app.use(logger("dev"));
 
