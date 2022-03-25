@@ -23,6 +23,24 @@ const userSchema = new Schema(
   }
 );
 
-const User = model("User", userSchema);
+///movie Information
+const movieSchema = new Schema(
+  {
+    Title: {
+      type: String,
+      required: true,
+    },
+    Actors: {
+      type: String,
+    },
+    Image:
+    {
+        data: Buffer,
+        contentType: String
+    }
+  })
 
-module.exports = User;
+
+const User = model("User", userSchema);
+const movie = model("movie", userSchema);
+module.exports = {User, movie}
